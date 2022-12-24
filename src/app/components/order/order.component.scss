@@ -1,0 +1,91 @@
+@import "mixins/commons";
+
+:host {
+  .order {
+    @include flex();
+
+    &-info {
+      margin-right: 9rem;
+      max-width: 30%;
+
+      &-title {
+        margin-bottom: 4.375rem;
+
+        &-item {
+          font-size: calc(var(--offset-m) + var(--offset-b));
+          font-weight: 700;
+        }
+      }
+
+      &-desc {
+        line-height: 1.5;
+        font-size: var(--font-size);
+        color: var(--brown);
+      }
+    }
+
+    &-form {
+      @include flex(flex-start, flex-start, var(--offset-sm), column);
+      width: 100%;
+    }
+
+    &-img {
+      position: relative;
+      top: (-5rem);
+      left: 10rem;
+    }
+  }
+
+  .red {
+    color: var(--warning);
+  }
+
+  @media screen and (max-width: 1600px) {
+    .order {
+      &-info {
+        margin-right: var(--offset-xl);
+
+        &-title {
+          margin-bottom: var(--offset-l);
+
+          &-item {
+            font-size: var(--offset-m);
+            font-weight: 700;
+          }
+        }
+      }
+
+      &-img {
+        @include size(25rem);
+        position: relative;
+        top: (-2.5rem);
+        left: 5rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    .order {
+      &-info {
+        max-width: 50%;
+        margin-right: var(--offset-l);
+
+        &-title {
+          margin-bottom: var(--offset-l);
+
+          &-item {
+            font-size: var(--offset-m);
+            font-weight: 700;
+          }
+        }
+      }
+
+      &-img {
+        @include size(20rem);
+        position: relative;
+        top: (-5rem);
+        left: 10rem;
+      }
+    }
+  }
+}

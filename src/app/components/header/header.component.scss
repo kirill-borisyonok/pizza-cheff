@@ -1,0 +1,75 @@
+@import "mixins/commons";
+@import "vars/borders";
+
+:host {
+  .header {
+    margin-bottom: 8.2rem;
+    box-shadow: $default-box-shadow;
+
+    &-inner {
+      @include flex(center, flex-start, 20%);
+      padding: var(--offset) 0;
+    }
+
+    &-logo {
+      @include flex(center, flex-start, var(--offset));
+
+      &-text-item {
+        font-size: var(--font-size-m);
+        font-weight: 700;
+        color: var(--primary-200);
+      }
+    }
+
+    &-nav {
+      @include flex(center, flex-start, var(--offset-ml));
+
+      &-link {
+        font-size: var(--offset);
+        color: var(--brown-400);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .menu {
+      margin-left: auto;
+
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 1040px) {
+    .header {
+      &-inner {
+        gap: 10%;
+      }
+
+      &-nav {
+        gap: var(--offset);
+
+        &-link {
+          font-size: calc(var(--font-size) - var(--font-size-xxs));
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 710px) {
+    .header {
+      &-inner {
+        gap: 5%;
+      }
+
+      &-nav {
+        gap: var(--offset-s);
+
+        &-link {
+          font-size: calc(var(--font-size) - var(--font-size-xs));
+        }
+      }
+    }
+  }
+}

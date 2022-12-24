@@ -1,0 +1,64 @@
+@import "mixins/commons";
+
+:host {
+  .introduction {
+    @include flex();
+    margin-bottom: 8.4rem;
+
+    &-info {
+      width: 60%;
+
+      &-title {
+        margin-bottom: calc(var(--offset-ml) + var(--offset-b));
+        &-item {
+          font-size: calc(var(--font-size-ml) - 0.125rem);
+          font-weight: 700;
+        }
+      }
+
+      &-desc {
+        @include flex(flex-start, flex-start, var(--offset-ml));
+        flex-wrap: wrap;
+        margin-bottom: calc(var(--offset-ml) + var(--offset-b));
+
+        &-item {
+          @include flex(center, flex-start, var(--offset));
+          max-width: 18.75rem;
+
+          &-content {
+            &-title {
+              font-weight: 700;
+              text-transform: uppercase;
+              color: var(--primary);
+            }
+
+            &-text {
+              color: var(--brown);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1600px) {
+    .introduction-info-title-item {
+      font-size: var(--font-size-xm);
+    }
+  }
+
+  @media screen and (max-width: 1265px) {
+    .introduction {
+      text-align: center;
+      justify-content: center;
+
+      &-info {
+        width: 100%;
+
+        &-desc {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

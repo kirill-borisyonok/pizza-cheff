@@ -1,0 +1,55 @@
+<section class="order">
+  <ng-container *ngIf="getScreenWidth > 710">
+    <div class="order-info">
+      <div class="order-info-title">
+        <div class="order-info-title-item brown">Хватит думать!</div>
+        <div class="order-info-title-item orange">
+          Доставим заказ за 30 минут!
+        </div>
+      </div>
+      <div class="order-info-desc">
+        Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления
+        заказа. Если мы опоздаем даже на 1 минуту - вы получаете весь заказ
+        бесплатно и ваучер на скидку на следующий заказ. Мы гордимся нашим
+        сервисом и сделаем всё, чтобы наш клиент был доволен и не остался
+        голодный!
+      </div>
+    </div>
+  </ng-container>
+  <form [formGroup]="form" (ngSubmit)="submit()" class="order-form">
+    <input
+      formControlName="name"
+      type="text"
+      placeholder="Ваше имя"
+      [class.warning]="form.controls.name.invalid && form.controls.name.touched"
+      (keydown)="dotValidator($event)"
+    />
+    <input
+      formControlName="address"
+      type="text"
+      placeholder="Адрес доставки"
+      [class.warning]="
+        form.controls.address.invalid && form.controls.address.touched
+      "
+    />
+    <input
+      formControlName="phone"
+      type="text"
+      placeholder="Телефон"
+      [class.warning]="
+        form.controls.phone.invalid && form.controls.phone.touched
+      "
+    />
+    <small
+      class="red"
+      *ngIf="form.controls.phone.invalid && form.controls.phone.touched"
+      >Введите номер телефона</small
+    >
+    <button class="full-width" type="submit" [disabled]="form.invalid">
+      Оформить заказ
+    </button>
+  </form>
+  <ng-container *ngIf="getScreenWidth > 1400">
+    <img class="order-img" src="assets/images/pizzzzza.png" alt="pizza" />
+  </ng-container>
+</section>

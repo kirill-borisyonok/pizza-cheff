@@ -1,0 +1,58 @@
+@import "mixins/commons";
+@import "vars/borders";
+:host {
+  .catalog {
+    margin-bottom: 14.875rem;
+
+    &-title {
+      margin-bottom: calc(var(--offset-ml) + var(--offset-b));
+      text-align: center;
+      font-size: var(--font-size-l);
+      color: var(--brown);
+    }
+
+    &-products {
+      @include flex(flex-start, center, var(--offset));
+      flex-wrap: wrap;
+
+      &-item {
+        @include size(18.75rem, 23.25rem);
+        padding: var(--offset-xm) var(--offset-sm) var(--offset);
+        box-shadow: $default-box-shadow;
+        text-align: center;
+
+        &-img {
+          @include size(13.375rem, 9.5rem);
+          margin-bottom: var(--offset);
+
+          cursor: pointer;
+        }
+
+        &-title {
+          margin-bottom: var(--offset);
+          font-size: calc(var(--offset-s) + var(--offset-b));
+          font-weight: 700;
+          color: var(--brown-500);
+        }
+
+        &-desc {
+          margin-bottom: var(--offset);
+          min-height: 3.5rem;
+          color: var(--black);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1600px) {
+    .catalog {
+      margin-bottom: 10rem;
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    .catalog {
+      margin-bottom: 5rem;
+    }
+  }
+}

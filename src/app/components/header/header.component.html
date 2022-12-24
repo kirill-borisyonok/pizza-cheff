@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="header-logo">
+        <img
+          class="header-logo-img"
+          src="assets/images/svg/pizza.svg"
+          alt="logo"
+        />
+        <div class="header-logo-text">
+          <div class="header-logo-text-item">pizza</div>
+          <div class="header-logo-text-item">cheff</div>
+        </div>
+      </div>
+      <ng-container *ngIf="getScreenWidth > 600; else menu">
+        <nav class="header-nav">
+          <a
+            class="header-nav-link"
+            *ngFor="let navItem of navItems"
+            href="#"
+            >{{ navItem }}</a
+          >
+        </nav>
+      </ng-container>
+      <ng-template #menu>
+        <mat-icon class="menu" (click)="openMenu()">menu</mat-icon>
+      </ng-template>
+    </div>
+  </div>
+</header>

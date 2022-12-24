@@ -1,0 +1,38 @@
+<section class="introduction">
+  <div class="introduction-info">
+    <div class="introduction-info-title">
+      <div class="introduction-info-title-item brown">
+        Самая вкусная пицца в мире
+      </div>
+      <div class="introduction-info-title-item orange">
+        только в Pizza Cheff
+      </div>
+    </div>
+    <div class="introduction-info-desc">
+      <div
+        *ngFor="let introductionItem of introductionItems"
+        class="introduction-info-desc-item"
+      >
+        <img
+          class="introduction-info-desc-item-img"
+          [src]="introductionItem.img"
+          alt="img"
+        />
+        <div class="introduction-info-desc-item-content">
+          <div class="introduction-info-desc-item-content-title">
+            {{ introductionItem.title }}
+          </div>
+          <div class="introduction-info-desc-item-content-text">
+            {{ introductionItem.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <button>выбрать пиццу</button>
+  </div>
+  <ng-container *ngIf="getScreenWidth > 1265">
+    <div class="introduction-img">
+      <img src="assets/images/pizza_big.png" alt="pizza_big" />
+    </div>
+  </ng-container>
+</section>

@@ -1,0 +1,16 @@
+<section class="catalog">
+  <h2 class="catalog-title">Выберите свою любимую пиццу</h2>
+  <div class="catalog-products">
+    <div *ngFor="let product of products" class="catalog-products-item">
+      <img
+        class="catalog-products-item-img"
+        [src]="product.img"
+        alt="pizza"
+        (click)="resizeImage(product.img)"
+      />
+      <div class="catalog-products-item-title">{{ product.title }}</div>
+      <div class="catalog-products-item-desc">{{ product.description }}</div>
+      <button class="full-width">В корзину</button>
+    </div>
+  </div>
+</section>

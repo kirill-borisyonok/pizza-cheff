@@ -1,0 +1,17 @@
+@import "mixins/commons";
+
+:host {
+  .modal-nav {
+    @include flex(flex-start, flex-start, var(--offset-s), column);
+    padding: 0 var(--offset);
+
+    &-link {
+      font-size: var(--offset);
+      color: var(--brown-400);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<ng-container *ngIf="data.name && data.text; else img">
+  <div mat-dialog-content>{{ data.name }}, {{ data.text }}</div>
+  <div mat-dialog-actions align="end">
+    <button cdkFocusInitial (click)="onNoClick()">Ok</button>
+  </div>
+</ng-container>
+<ng-template #img>
+  <div [style.text-align]="'center'">
+    <img
+      class="modal-img"
+      [src]="data.img"
+      width="90%"
+      alt="pizza"
+      (click)="onNoClick()"
+    />
+  </div>
+</ng-template>
